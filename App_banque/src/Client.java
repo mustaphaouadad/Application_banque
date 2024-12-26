@@ -77,7 +77,7 @@ public class Client {
             System.out.print("Entrer email de Client: ");
             email = sc.next();
             if (!Vemail(email)) {
-                System.out.println("❌ Email non valide! Essayez encore.");
+                System.out.println(" Email non valide! Essayez encore.");
             }
         } while (!Vemail(email));
         client.setEmail(email);
@@ -88,11 +88,11 @@ public class Client {
             System.out.println("Entrer telephone de Client ");
               telephone = sc.nextLine();
             if (!Vtelephone(telephone)) {
-                System.out.println("❌ Telephone non valide! Essayez encore.");
+                System.out.println(" Telephone non valide! Essayez encore.");
             }
         }while (!Vtelephone(telephone));
         client.setTelphone(telephone);
-        
+
         clients.add(client);
         System.out.println("Client ajouter avec succes");
     }

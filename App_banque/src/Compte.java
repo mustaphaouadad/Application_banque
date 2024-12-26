@@ -7,6 +7,7 @@ public abstract class Compte  {
         this.solde = solde;
         this.proprietaire = proprietaire;
     }
+
     public String getNumero(){
         return numero;
     }

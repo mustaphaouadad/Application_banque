@@ -79,7 +79,8 @@ public class Main {
         do {
             System.out.println("-----------Gestion des Comptes Bancaires-----------");
             System.out.println("1 - Creer un compte bancaire");
-            System.out.println("2 - Afficher les informations d'un compte");
+            System.out.println("2 - Afficher les informations d'un compte Courant ");
+            System.out.println("3 - Afficher les informations d'un compte Epargne ");
             System.out.println("3 - Retour au Menu Principal");
             System.out.print("Entrer votre choix: ");
             choix = sc.nextInt();
@@ -97,7 +98,7 @@ public class Main {
                                 compteCourant.CreerCompte();
                                 break;
                             case 2:
-                                //compteEpargne.CreerCompte();
+                                compteEpargne.CreerCompte();
                                 break;
                             case 3:
                                 break;
@@ -108,16 +109,21 @@ public class Main {
                     } while (choice != 3);
                     break;
                 case 2:
-                    System.out.println("Afficher les informations d'un compte: Fonctionnalité pas encore implementée.");
+                    System.out.println("Afficher les informations d'un compte courant: ");
+                    compteCourant.AfficherCompt();
                     break;
                 case 3:
+                    System.out.println("Afficher les informations d'un compte Epargne: ");
+                    compteEpargne.AfficherCompt();
+                    break;
+                case 4:
                     System.out.println("Retour au menu principal...");
                     break;
                 default:
                     System.out.println("Choix invalide ! Réessayez.");
                     break;
             }
-        } while (choix != 3);
+        } while (choix != 4);
     }
 }
 

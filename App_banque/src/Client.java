@@ -77,21 +77,22 @@ public class Client {
         Client client =new Client();
         System.out.println("Entrer id de Client ");
         client.setId(sc.nextInt());
+        sc.nextLine();
         System.out.println("Entrer nom de Client ");
-        client.setNom(sc.next());
+        client.setNom(sc.nextLine());
         System.out.println("Entrer prenom de Client ");
-        client.setPrenom(sc.next());
+        client.setPrenom(sc.nextLine());
         String email;
         do {
-            System.out.print("Entrer email de Client: ");
-            email = sc.next();
+            System.out.println("Entrer email de Client: ");
+            email = sc.nextLine();
             if (!Vemail(email)) {
                 System.out.println(" Email non valide! Essayez encore.");
             }
         } while (!Vemail(email));
         client.setEmail(email);
         System.out.println("Entrer adresse de Client ");
-        client.setAdresse(sc.next());
+        client.setAdresse(sc.nextLine());
         String telephone;
         do {
             System.out.println("Entrer telephone de Client ");
@@ -105,13 +106,18 @@ public class Client {
         clients.add(client);
         System.out.println("Client ajouter avec succes");
     }
+
+
+
+
     public void AfficherClient(){
         if(clients.isEmpty()|| clients == null){
             System.out.println("Acun Client n'est pas ajouter");
         }else{
-        for(Client client:clients){
+   for(Client client:clients){
+
             System.out.println("id: "+client.getId()+" nom: "+client.getNom()+" prenom: "+client.getPrenom()+
-                    " email: "+client.getEmail()+" adresse "+client.getAdresse()+" telephone: "+client.getTelephone());
+                   " email: "+client.getEmail()+" adresse "+client.getAdresse()+" telephone: "+client.getTelephone());
 
         }
         }

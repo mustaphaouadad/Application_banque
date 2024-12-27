@@ -2,9 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CompteCourant extends Compte {
-    CompteCourant compteCourant=new CompteCourant();
 
-    //declaration des varible
     static ArrayList<CompteCourant>compteCourants=new ArrayList<CompteCourant>();
     static double fraisBancaires;
 
@@ -33,8 +31,6 @@ public class CompteCourant extends Compte {
             scanner.nextLine();
             System.out.println("entrer le solde initiale: ");
             double soldeInitiale = scanner.nextDouble();
-//            scanner.nextLine();
-//            double soldeActuelle = operation.CalculeSoldeActuelle();
             CompteCourant compteCourant = new CompteCourant(numeroCompte,soldeInitiale,client);
             compteCourants.add(compteCourant);
         }else {
@@ -47,9 +43,10 @@ public class CompteCourant extends Compte {
             System.out.println("Acun Compt n'est pas ajouter");
         }else {
             for (CompteCourant compteCourant:compteCourants){
-                System.out.println("le numero de compt "+compteCourant.getNumeroCompte()+"le solde "+compteCourant.getSoldeActuelle()+"les clien "+compteCourant);
+                System.out.println("le numero de compt "+compteCourant.getNumeroCompte()+"le solde "+compteCourant.getSoldeInicile()+"client "+compteCourant.getProprietaire().getNom());
             }
         }
     }
+
 
 }

@@ -8,7 +8,7 @@ public class Client {
     private String email;
     private String adresse;
     private String telephone;
-    ArrayList<Client>clients=new ArrayList<>();
+    static  ArrayList<Client>clients=new ArrayList<>();
     public Client(int id, String nom, String prenom,
                   String email, String adresse,String telephone) {
         this.id=id;

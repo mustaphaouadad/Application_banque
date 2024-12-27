@@ -72,6 +72,7 @@ public class Main {
             switch (choix){
                 case 1:
                     System.out.println("Creer un compt bancaire");
+
                     break;
                 case 2:
                     System.out.println("Afficher les information d'un compte");

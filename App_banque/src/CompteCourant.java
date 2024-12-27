@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CompteCourant extends Compte {
+    CompteCourant compteCourant=new CompteCourant();
 
     //declaration des varible
     static ArrayList<CompteCourant>compteCourants=new ArrayList<CompteCourant>();
@@ -40,6 +41,15 @@ public class CompteCourant extends Compte {
             System.out.println("client introuvable . veuillez ajouter un client!!");
         }
 
+    }
+    public void AfficherCompt(){
+        if (compteCourants.isEmpty()||compteCourants==null){
+            System.out.println("Acun Compt n'est pas ajouter");
+        }else {
+            for (CompteCourant compteCourant:compteCourants){
+                System.out.println("le numero de compt "+compteCourant.getNumeroCompte()+"le solde "+compteCourant.getSoldeActuelle()+"les clien "+compteCourant);
+            }
+        }
     }
 
 }

@@ -55,6 +55,15 @@ public class Client {
     public void setTelphone(String telephone){
         this.telephone=telephone;
     }
+
+    public static ArrayList<Client> getClients() {
+        return clients;
+    }
+
+    public static void setClients(ArrayList<Client> clients) {
+        Client.clients = clients;
+    }
+
     public boolean Vemail(String email){
         String regex="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
         return email.matches(regex);

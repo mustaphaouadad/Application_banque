@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CompteEpargne extends Compte {
-    //declaration des variable
+
     private double tauxInteret;
     static ArrayList<CompteEpargne>compteEpargnes=new ArrayList<CompteEpargne>();
   public CompteEpargne(String numeroCompte, double soldeInitiale ,Client client){
       super(numeroCompte,soldeInitiale,client);
   }
-    //getter and setter
+
     public double getTauxInteret() {
         return tauxInteret;
     }
@@ -17,14 +17,14 @@ public class CompteEpargne extends Compte {
         this.tauxInteret = tauxInteret;
     }
 
-    //constractors
+
     public CompteEpargne (){}
 
-    //objects
+
     Operation operation=new Operation();
     Scanner scanner = new Scanner(System.in);
 
-    //daclaration des methodes
+
     @Override
     public void CreerCompte() {
         System.out.println("entrer id du client: ");
@@ -53,15 +53,6 @@ public class CompteEpargne extends Compte {
         }
     }
 
-//
-//
-//        scanner.nextLine();
-//        System.out.println("un Taux d'interet de 3% par année");
-//        System.out.println("combien d'annéés de blockage: ");
-//        int nombreAnnee=scanner.nextInt();
-//        scanner.nextLine();
-//        double mantantActuelle= getSoldeActuelle();
-//
-//       double soldeActuelle = operation.CalculeSoldeActuelle()+operation.CalculeTauxInteret();
+
 
 }

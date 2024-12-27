@@ -6,19 +6,17 @@ public class CompteCourant extends Compte {
     static ArrayList<CompteCourant>compteCourants=new ArrayList<CompteCourant>();
     static double fraisBancaires;
 
-    //objects
+
     Scanner scanner = new Scanner(System.in);
     Operation operation = new Operation();
-    //constractos
+
     public CompteCourant(){}
     public CompteCourant(String numeroCompte, double soldeActuelle ,Client client){
         super(numeroCompte,soldeActuelle,client);
 
     }
 
-    //declaration des methodes
 
-    //implémentation des methodes
     @Override
     public void CreerCompte() {
         System.out.println("entrer id du client: ");
@@ -28,7 +26,6 @@ public class CompteCourant extends Compte {
         if(client != null){
             System.out.println("entrer le numéro du compte: ");
             String numeroCompte = scanner.nextLine();
-            scanner.nextLine();
             System.out.println("entrer le solde initiale: ");
             double soldeInitiale = scanner.nextDouble();
             CompteCourant compteCourant = new CompteCourant(numeroCompte,soldeInitiale,client);

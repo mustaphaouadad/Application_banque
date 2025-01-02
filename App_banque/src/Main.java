@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Main {
     CompteCourant compteCourant = new CompteCourant();
     CompteEpargne compteEpargne = new CompteEpargne();
+    Operation operation =new Operation();
+
     Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -14,9 +16,7 @@ public class Main {
             System.out.println("1 - Gerer les Clients");
             System.out.println("2 - Gerer les Comptes Bancaires");
             System.out.println("3 - Effectuer des Operations bancaires");
-            System.out.println("4 - Afficher tous les Comptes bancaires");
-            System.out.println("5 - Afficher historique des operations");
-            System.out.println("6 - Quitter l'application");
+            System.out.println("4 - Quitter l'application");
             System.out.print("Entrer votre choix: ");
             choix = sc.nextInt();
             switch (choix) {
@@ -27,22 +27,16 @@ public class Main {
                     main.GestCompt();
                     break;
                 case 3:
-                    System.out.println("Operations bancaires pas encore implementées.");
+                   main.EffOperation();
                     break;
                 case 4:
-                    System.out.println("Affichage des comptes pas encore implementé.");
-                    break;
-                case 5:
-                    System.out.println("Historique des operations pas encore implementé.");
-                    break;
-                case 6:
                     System.out.println("Merci pour votre visite!");
                     break;
                 default:
                     System.out.println("Choix incorrect, réessayez!");
                     break;
             }
-        } while (choix != 6);
+        } while (choix != 4);
     }
 
     public void gererClient() {
@@ -81,7 +75,7 @@ public class Main {
             System.out.println("1 - Creer un compte bancaire");
             System.out.println("2 - Afficher les informations d'un compte Courant ");
             System.out.println("3 - Afficher les informations d'un compte Epargne ");
-            System.out.println("3 - Retour au Menu Principal");
+            System.out.println("4 - Retour au Menu Principal");
             System.out.print("Entrer votre choix: ");
             choix = sc.nextInt();
             switch (choix) {
@@ -125,6 +119,44 @@ public class Main {
             }
         } while (choix != 4);
     }
+    public void EffOperation() {
+        Scanner sc = new Scanner(System.in);
+        int choix;
+
+        do {
+            System.out.println("1 - Effectuer Dépôt");
+            System.out.println("2 - Retour au menu principal...");
+            System.out.print("Votre choix : ");
+            choix = sc.nextInt();
+
+            switch (choix) {
+                case 1:
+
+                    System.out.println("Entrer le montant à déposer : ");
+                    double montantDepot = sc.nextDouble();
+                    sc.nextLine();
+                    System.out.println("entrer le numero de compte: ");
+                    String numeroCompte=sc.nextLine();
+
+                    Compte compte= Compte.RechercheCompteNumero(numeroCompte);
+                    if (compte != null){
+                        Operation.effectuerDepot(compte, montantDepot);
+                    }else {
+                        System.out.println("compte n'existe pas!!");
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("Retour au menu principal...");
+                    break;
+
+                default:
+                    System.out.println("Choix invalide. Veuillez réessayer.");
+                    break;
+            }
+        } while (choix != 2);
+    }
+
 }
 
 

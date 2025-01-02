@@ -1,5 +1,4 @@
 
-
 import java.util.Scanner;
 
 abstract public class Compte {
@@ -14,7 +13,9 @@ abstract public class Compte {
     private double soldeInicile;
     private double soldeActuelle;
 
-
+    public Compte(double soldeInitial) {
+        this.soldeActuelle = soldeInitial >= 0 ? soldeInitial : 0;
+    }
 
     public double getSoldeActuelle(){
         return soldeActuelle;
@@ -57,10 +58,11 @@ abstract public class Compte {
     }
 
 
-    public Compte (String numeroCompte,double soldeActuelle,Client client){
+    public Compte (String numeroCompte,double soldeInicile,Client client){
         this.numeroCompte=numeroCompte;
-        this.soldeActuelle=soldeActuelle;
+        this.soldeInicile=soldeInicile;
         proprietaire=client;
+        this.soldeActuelle=getSoldeActuelle();
 
     }
     public Compte (){}
@@ -74,6 +76,13 @@ abstract public class Compte {
             }
         }
         return null;
+    }
+    public static Compte RechercheCompteNumero(String numeroCompte){
+        for (Compte compte : CompteCourant.compteCourants){
+            if (numeroCompte.equals(compte.getNumeroCompte()) ){
+                return compte;
+            }
+        }return null;
     }
 }
 

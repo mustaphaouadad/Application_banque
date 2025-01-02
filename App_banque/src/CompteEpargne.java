@@ -35,8 +35,8 @@ public class CompteEpargne extends Compte {
             System.out.println("entrer le numéro du compte: ");
             String numeroCompte = scanner.nextLine();
             System.out.println("entrer le solde initiale: ");
-            double soldeInitiale = scanner.nextDouble();
-            CompteEpargne compteEpargne = new CompteEpargne(numeroCompte,soldeInitiale,client);
+            double soldeIniciale = scanner.nextDouble();
+            CompteEpargne compteEpargne = new CompteEpargne(numeroCompte,soldeIniciale,client);
             compteEpargnes.add(compteEpargne);
 
         }else {
@@ -48,7 +48,7 @@ public class CompteEpargne extends Compte {
             System.out.println("Acun Compt n'est pas ajouter");
         }else {
             for(CompteEpargne compteEpargne :compteEpargnes){
-                System.out.println("le numero de compt "+compteEpargne.getNumeroCompte()+"le solde "+compteEpargne.getSoldeInicile()+"client "+compteEpargne.getProprietaire().getNom());
+                System.out.println("le numero de compt "+compteEpargne.getNumeroCompte()+" le solde "+compteEpargne.getSoldeInicile()+" client "+compteEpargne.getProprietaire().getNom());
             }
         }
     }

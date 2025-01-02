@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class CompteCourant extends Compte {
 
     static ArrayList<CompteCourant>compteCourants=new ArrayList<CompteCourant>();
-    static double fraisBancaires;
+//    static double fraisBancaires;
 
 
     Scanner scanner = new Scanner(System.in);
@@ -27,8 +27,8 @@ public class CompteCourant extends Compte {
             System.out.println("entrer le numéro du compte: ");
             String numeroCompte = scanner.nextLine();
             System.out.println("entrer le solde initiale: ");
-            double soldeInitiale = scanner.nextDouble();
-            CompteCourant compteCourant = new CompteCourant(numeroCompte,soldeInitiale,client);
+            double soldeIniciale = scanner.nextDouble();
+            CompteCourant compteCourant = new CompteCourant(numeroCompte,soldeIniciale,client);
             compteCourants.add(compteCourant);
         }else {
             System.out.println("client introuvable . veuillez ajouter un client!!");
